@@ -44,8 +44,11 @@
 ## 使用技術（実行環境）
 
 PHP:7.4.9
+
 mysql:8.0
+
 nginx:1.21.1
+
 Laravel:8.x
 
 ## 開発環境
@@ -53,11 +56,13 @@ Laravel:8.x
 URL:
 
 ・画面: http://localhost/
-・ユーザー登録:
+
+・ユーザー登録: http://localhost/
+
 ・phpMyAdmin: http://localhost:8080/
    
 
-
+## ER図
 
 
 
