@@ -29,12 +29,13 @@
     php artisan key:generate
 	php artisqan config:cache
 
-## マイグレーションの実行
+## Productモデルとマイグレーションの作成&実行
  
-    php artisan migrate
+    php artisan make:model Product -m
 
-## シーディングの実行
- 
+## シーディングの作成&実行
+
+ 	php artisan make:seeder ProductSeeder
     php artisan db:seed
 
 ## シンボリックリンクの作成
