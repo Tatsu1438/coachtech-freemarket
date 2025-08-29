@@ -1,6 +1,14 @@
 # coachtech-freemarket
 
-#　環境構築
+##　サービス名
+
+coachtechフリマ
+
+## サービス概要
+
+ある企業が開発した独自のフリマアプリ
+
+## 環境構築
 
 ## Dockerビルド
 
