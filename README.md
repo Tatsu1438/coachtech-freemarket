@@ -1,6 +1,6 @@
 # coachtech-freemarket
 
-##　サービス名
+## サービス名
 
 coachtechフリマ
 
