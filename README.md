@@ -43,6 +43,7 @@ coachtechフリマ
 
  	php artisan migrate --env=testing
   	php artisan make:migration
+   	php artisan test --env=testing
 
 ## シーディングの作成&実行
 
