@@ -37,9 +37,12 @@ coachtechフリマ
     php artisan key:generate
 	php artisqan config:cache
 
-## Productモデルとマイグレーションの作成&実行
+## Productモデルとマイグレーション(test用と本番用)の作成&実行
  
     php artisan make:model Product -m
+
+ 	php artisan migrate --env=testing
+  	php artisan make:migration
 
 ## シーディングの作成&実行
 
