@@ -1,0 +1,84 @@
+.login {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1512px;
+    border: solid;
+}
+
+.login-box {
+    width: 680px;
+    height: auto;
+    margin-top: 200px;
+    margin-bottom: 200px;
+
+
+    border: solid;
+}
+
+h2 {
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+
+    color: #000000;
+}
+
+label{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+}
+
+input{
+        width: 680px;
+        height: 57px;
+        box-sizing: border-box;
+        border: 1px solid #5F5F5F;
+        border-radius: 4px;
+}
+.mail-form-name{
+    margin-top: 60px;
+}
+.pass-form-name {
+    margin-top: 30px;
+}
+
+button {
+    width: 680px;
+    height: 65px;
+    margin-top: 90px;
+    background: #FF5555;
+    border-radius: 5px;
+}
+
+#btn {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 31px;
+    color: #FFFFFF;
+}
+
+.register-btn {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #0073CC;
+    padding: 16px 8px;
+}
+
+.register-btn-box {
+    margin-top: 20px;
+    line-height: 24px;
+    text-align: center;
+}

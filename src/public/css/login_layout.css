@@ -1,0 +1,21 @@
+header {
+    background-color: black;
+}
+
+.header_box {
+    width: 100%;
+    max-width: 1512px;
+    height: 82px;
+    border: solid;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+}
+
+.header-logobox {
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 82px;
+    display: flex;
+}

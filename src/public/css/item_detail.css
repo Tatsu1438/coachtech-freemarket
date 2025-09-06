@@ -1,0 +1,296 @@
+.item-detail-box {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    margin-top: 100px;
+
+    border: solid;
+}
+
+.item-detail-img {
+    width: 690px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+
+    border: solid;
+}
+
+.item-image {
+    width: 600px;
+    height: 600px;
+}
+
+.item-detail {
+    width: 690px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+
+    border: solid;
+}
+
+.item-detail-group1 {
+
+    width: 570px;
+    border: solid;
+}
+
+
+.item-name {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 54px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+.item-brand {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    color: #000000;
+}
+
+.item-price {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.production-action{
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+.product-good {
+    text-align: center;
+}
+
+.favorite-btn {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+.favorite-btn img {
+    width: 40px;
+    height: 40px;
+}
+
+
+.product-comment {
+    text-align: center;
+    margin-left: 50px;
+}
+
+.comment-btn {
+    background-color: white;
+    border: none;
+}
+
+.comment-btn img {
+    width: 40px;
+    height: 40px;
+}
+
+.buy-btn-box {
+    width: 570px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    background-color: #FF5555;
+    margin-bottom: 20px;
+}
+
+.buy-btn {
+    height: 56px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #FF5555;
+    color: #FFFFFF;
+    border: none;
+}
+
+.item-description-title {
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+.item-description-content{
+    height: auto;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+.item-detail-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+strong {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    align-items: center;
+
+    color: #000000;
+
+}
+
+.item-info-category {
+    display: flex;
+    align-items: center;
+    border: solid;
+
+}
+
+.item-category {
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    /* ボックスの高さと同一 */
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    border-radius: 50px;
+    color: #000000;
+    background-color: #D9D9D9;
+}
+
+.item-info-condition {
+    display: flex;
+    align-items: center;
+    border: solid;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.item-condition {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+
+.comment-title {
+    display: flex;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    display: flex;
+    align-items: center;
+
+    color: #5F5F5F;
+}
+
+.comment-title p {
+    margin: 0;
+}
+
+.comment-text-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 5px;
+
+    color: #000000;
+}
+
+textarea {
+    width: 570px;
+    height: 246px;
+}
+
+.comment-submit {
+    width: 570px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    background-color: #FF5555;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    border: solid;
+}
+
+.comment-submit-btn {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    background-color: #FF5555;
+    border: none;
+}

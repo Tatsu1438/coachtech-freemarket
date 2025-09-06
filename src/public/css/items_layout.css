@@ -1,0 +1,129 @@
+
+header {
+    background-color: #000000;
+}
+
+.header_box {
+    width: 100%;
+    max-width: 1512px;
+    height: 82px;
+    border: solid;
+    display: flex;
+    justify-content: space-between;
+    background-color: #000000;
+}
+.header-logobox {
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 82px;
+    display: flex;
+}
+
+.search-box {
+    width: 563px;
+    height: 80px;
+}
+
+.search-input-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+}
+
+.search-input {
+    width: 500px;
+    height: 50px;
+}
+
+input::placeholder {
+    display: flex;
+    color: #000000;
+    font-size: 24px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    width: 330px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    top: 20%;
+    bottom: 20%;
+}
+
+.btn-box {
+    width: 463px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logout-box {
+    width: 135px;
+    height: 47px;
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.logout-btn {
+    width: 135px;
+    height: 47px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 29px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #000000;
+    border: none;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.mypage-btn-box {
+    width: 135px;
+    height: 47px;
+}
+
+.mypage-btn {
+    width: 135px;
+    height: 47px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 29px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #000000;
+    border: none;
+    cursor: pointer;
+}
+
+
+.sell-btn-box {
+    width: 100px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.sell-btn {
+    width: 100px;
+    height: 50px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    cursor: pointer;
+}
