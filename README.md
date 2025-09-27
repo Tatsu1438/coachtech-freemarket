@@ -122,9 +122,6 @@ URL:
 
 
 
-users テーブルに current_weight と goal_weight を追加するマイグレーションを作る。
-
-　　php artisan make:migration add_weight_columns_to_users_table --table=users
 　　
 
 
