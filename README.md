@@ -8,6 +8,28 @@ coachtechフリマ
 
 ある企業が開発した独自のフリマアプリ
 
+##制作の背景と目的
+
+アイテムの出品と購入を行うためのフリマアプリを開発する
+
+##目標
+
+初年度でのユーザー数1000人達成
+
+###ターゲットユーザー
+10-30代の社会人
+
+###ターゲットブラウザ/os
+PC:Chrome/Firefox/Safari
+
+##作業範囲
+
+設計、コーディング、テスト
+
+##納品方法
+
+Githubでのリポジトリ共有
+
 ## 環境構築
 
 ## Dockerビルド
@@ -33,6 +55,13 @@ coachtechフリマ
  	php artisn cache:clear
 
 ## アプリケーションキーの作成
+
+## 環境変数
+
+.env ファイルを作成して以下のように設定してください
+
+	cp .env.example .env
+	php artisan key:generate
   
     php artisan key:generate
 	php artisqan config:cache
@@ -42,8 +71,14 @@ coachtechフリマ
     php artisan make:model Product -m
 
  	php artisan migrate --env=testing
-  	php artisan make:migration
-   	php artisan test --env=testing
+	php artisan make:migration
+
+## テスト方法
+
+以下のコマンドでユニットテストを実行できます
+
+	docker-compose exec php bash
+	php artisan test --env=testing
 
 ## シーディングの作成&実行
 
