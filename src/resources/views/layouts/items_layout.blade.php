@@ -17,9 +17,11 @@
                 </div>
             </div>
             <div class="search-box">
-                <div class="search-input-box">
-                    <input class="search-input" type="text" placeholder="なにをお探しですか？" >
-                </div>
+                <form action="{{ route('items.search') }}" method="GET" id="search-form">
+                    <div class="search-input-box">
+                        <input class="search-input" name="keyword" type="text" id="search-input" value="{{ request('keyword') }}" placeholder="なにをお探しですか？" onkeypress="if(event.key === 'Enter'){ this.form.submit(); }" >
+                    </div>
+                </form>
             </div>
             <div class="btn-box">
                 <div class="logout-box">
@@ -49,4 +51,5 @@
         @yield('content')
     </main>
 </body>
+@yield('scripts')
 </html>

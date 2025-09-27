@@ -9,7 +9,15 @@ class Product extends Model
 {
     use HasFactory;
 
-
+    protected $fillable = [
+    'product_name',
+    'brand',
+    'description',
+    'price',
+    'condition',
+    'img_url',
+    'user_id',
+    ];
 
     public function favoritedByUsers()
     {
@@ -18,11 +26,27 @@ class Product extends Model
 
     public function categories()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsToMany(Category::class, 'category_product', 'product_id', 'category_id');
     }
 
     public function comments()
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function favorites()
+    {
+        return $this->belongsToMany(User::class, 'favorites', 'product_id', 'user_id');
+    }
+
+    public function purchases()
+    {
+        return $this->hasMany(Purchase::class, 'item_id');
+    }
+
 }

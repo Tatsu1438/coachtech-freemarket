@@ -28,7 +28,7 @@ class AddressRequest extends FormRequest
             'address' => 'required|string',
         ];
     }
-    public function massages()
+    public function messages()
     {
         return [
             'postal_code.required' => '郵便番号は必須です',

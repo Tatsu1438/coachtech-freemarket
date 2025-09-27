@@ -8,6 +8,9 @@ class RegisterResponseController implements RegisterResponseContract
 {
     public function toResponse($request)
     {
+        if (!$request->user()->hasVerifiedEmail()) {
+            return redirect()->route('verification.notice');
+        }
         return redirect()->route('mypage_first');
     }
 }

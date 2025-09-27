@@ -27,7 +27,7 @@ class CommentRequest extends FormRequest
             'comment' => 'required|string|max:255',
         ];
     }
-    public function massages()
+    public function messages()
     {
         return [
             'comment.required' => '商品コメントは入力必須です',

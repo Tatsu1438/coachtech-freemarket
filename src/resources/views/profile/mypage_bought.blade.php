@@ -7,10 +7,16 @@
 @section('content')
     <div class="user-name-area">
         <div class="user-name-box">
-            <div class="user-icon"></div>
-            <div class="user-name"></div>
+            <div class="icon">
+                @if(auth()->user()->icon)
+                    <img class="user-icon" src="{{ Storage::url(auth()->user()->icon) }}" alt="{{ auth()->user()->name }}">
+                @endif
+            </div>
+            <div class="user-name">
+                {{ auth()->user()->name }}
+            </div>
             <div class="user-edit">
-                <button onclick="location.href='{{ route('profile.edit') }}'">プロフィールを編集する</button>
+                <button class="user-edit-btn" onclick="location.href='{{ route('profile.edit') }}'">プロフィールを編集する</button>
             </div>
         </div>
     </div>
@@ -28,48 +34,41 @@
 
     <div class="item-box">
         <div class="item-box-1">
-            @php
-                $items1 = [
-                    'Armani+Mens+Clock.jpg',
-                    'HDD+Hard+Disk.jpg',
-                    'Leather+Shoes+Product+Photo.jpg',
-                    'Living+Room+Laptop.jpg'
-                ];
-            @endphp
-            @foreach ($items1 as $index => $item)
-                <div class="item-card">
-                    <div class="item-card-img">
-                        <img src="{{ asset('storage/images/'.$item) }}" alt="アイテム{{ $index + 1 }}" class="item-image">
+            <div class="card-box">
+                @foreach ($purchases->slice(0, 4) as $index => $purchase)
+                    <div class="item-card">
+                        <div class="item-card-img">
+                            <img src="{{ asset($purchase->product && $purchase->product->img_url ? str_replace('storage/app/public/', 'storage/', $purchase->product->img_url) : 'images/default.jpg') }}" alt="アイテム{{ $index + 1 }}" class="item-image">
+                        </div>
+                        <div class="item-card-name">
+                            <p class="item-name">{{ $purchase->product ? $purchase->product->product_name : '商品名なし' }}</p>
+                        </div>
                     </div>
-                    <div class="item-card-name">
-                        <p class="item-name">Item {{ $index + 1 }}</p>
-                    </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
     <div class="item-box-margin"></div>
     <div class="item-box">
         <div class="item-box-2">
-            @php
-                $items2 = [
-                    'Music+Mic+4632231.jpg',
-                    'Purse+fashion+pocket.jpg',
-                    'Tumbler+souvenir.jpg',
-                    'Waitress+with+Coffee+Grinder.jpg'
-                ];
-            @endphp
-            @foreach ($items2 as $index => $item)
-                <div class="item-card">
-                    <div class="item-card-img">
-                        <img src="{{ asset('storage/images/'.$item) }}" alt="アイテム{{ $index + 5 }}" class="item-image">
+            <div class="card-box">
+                @foreach ($purchases->slice(4, 4) as $index => $purchase)
+                    <div class="item-card">
+                        <div class="item-card-img">
+                            <img src="{{ asset($purchase->product && $purchase->product->img_url ? str_replace('storage/app/public/', 'storage/', $purchase->product->img_url) : 'images/default.jpg') }}" 
+                                alt="アイテム{{ $index + 5 }}" 
+                                class="item-image">
+                        </div>
+                        <div class="item-card-name">
+                            <p class="item-name">{{ $purchase->product ? $purchase->product->product_name : '商品名なし' }}</p>
+                        </div>
                     </div>
-                    <div class="item-card-name">
-                        <p class="item-name">Item {{ $index + 5 }}</p>
-                    </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
+    </div>
+    <div class="pagination">
+        {{ $purchases->links() }}
     </div>
 
 @endsection

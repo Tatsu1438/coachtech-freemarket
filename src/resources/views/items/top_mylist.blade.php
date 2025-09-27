@@ -7,9 +7,9 @@
 @section('content')
     <div class="change-box">
         <div class="change-recommend">
-            <a href="{{ route('items.top') }}">
-                <button class="recommend-btn">おすすめ</button>
-            </a>
+            <button class="recommend-btn" onclick="window.location.href='{{ route('items.top') }}'">
+                おすすめ
+            </button>
         </div>
         <div class="change-mylist">
             <button  style=" color: red;" class="mylist-btn">マイリスト</button>
@@ -19,36 +19,49 @@
 
     <div class="item-box">
         <div class="item-box-1">
-            @foreach ($products as $index => $item)
-            <a href="{{ route('items.detail', $item->id) }}" class="item-card-link">
-                <div class="item-card">
-                    <div class="item-card-img">
-                        <img src="{{ asset('storage/images/'. basename($item->img_url)) }}" alt="{{ $item->name }}" class="item-image">
+            <div class="card-box">
+                @foreach ($all_favorite_items->slice(0, 4) as $item)
+                <a href="{{ route('items.detail', $item->id) }}" class="item-card-link">
+                    <div class="item-card">
+                        <div class="item-card-img">
+                            <img src="{{ asset('storage/images/'. basename($item->img_url)) }}" alt="{{ $item->name }}" class="item-image">
+                        </div>
+                        <div class="item-card-name">
+                            <p class="item-name">{{ $item->product_name }}</p>
+                            @if($item->purchases->isNotEmpty())
+                                <span class="sold">SOLD</span>
+                            @endif
+                        </div>
                     </div>
-                    <div class="item-card-name">
-                        <p class="item-name">{{ $item->name }}</p>
-                    </div>
-                </div>
-            </a>
-            @endforeach
+                </a>
+                @endforeach
+            </div>
         </div>
     </div>
     <div class="item-box-margin"></div>
     <div class="item-box">
         <div class="item-box-2">
-            @foreach ($products as $index => $item)
-            <a href="{{ route('items.detail', $item->id) }}" class="item-card-link">
-                <div class="item-card">
-                    <div class="item-card-img">
-                        <img src="{{ asset('storage/images/'. basename($item->img_url)) }}" alt="{{ $item->name }}" class="item-image">
+            <div class="card-box">
+                @foreach ($all_favorite_items->slice(4, 4) as $item)
+                <a href="{{ route('items.detail', $item->id) }}" class="item-card-link">
+                    <div class="item-card">
+                        <div class="item-card-img">
+                            <img src="{{ asset('storage/images/'. basename($item->img_url)) }}" alt="{{ $item->name }}" class="item-image">
+                        </div>
+                        <div class="item-card-name">
+                            <p class="item-name">{{ $item->product_name }}</p>
+                            @if($item->purchases->isNotEmpty())
+                                <span class="sold">SOLD</span>
+                            @endif
+                        </div>
                     </div>
-                    <div class="item-card-name">
-                        <p class="item-name">{{ $item->name }}</p>
-                    </div>
-                </div>
-            </a>
-            @endforeach
+                </a>
+                @endforeach
+            </div>
         </div>
+    </div>
+    <div class="pagination">
+        {{ $all_favorite_items->links() }}
     </div>
 
 

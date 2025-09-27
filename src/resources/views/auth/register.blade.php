@@ -18,7 +18,7 @@
                         <input type="text" id="name" name="name">
                     </div>
                     @error('name')
-                        <p class="error">{{ $message }}</p>
+                        <p  style="color: red;" class="error">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="mail-form">
@@ -29,7 +29,7 @@
                         <input type="email" id="email" name="email">
                     </div>
                     @error('email')
-                        <p class="error">{{ $message }}</p>
+                        <p style="color: red;" class="error">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="pass-form">
@@ -40,7 +40,7 @@
                         <input type="password" id="password" name="password">
                     </div>
                     @error('password')
-                        <p class="error">{{ $message }}</p>
+                        <p style="color: red;" class="error">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="confirm-form">
@@ -51,7 +51,7 @@
                         <input type="password" id="password_confirmation" name="password_confirmation">
                     </div>
                     @if ($errors->has('password'))
-                        <p class="error">{{ $errors->first('password') }}</p>
+                        <p  style="color: red;" class="error">{{ $errors->first('password') }}</p>
                     @endif
                 </div>
                 <div class="register-submit">

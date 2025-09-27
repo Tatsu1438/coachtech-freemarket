@@ -11,7 +11,7 @@
         </div>
         <div class="item-detail">
             <div class="item-detail-group1">
-                <h2 class="item-name">{{ $item->name }}</h2>
+                <h2 class="item-name">{{ $item->product_name }}</h2>
                 <p class="item-brand">{{ $item->brand}}</p>
                 <p class="item-price">価格: ¥{{ number_format($item->price ?? 0) }}(税込)</p>
                 <div class="production-action">
@@ -49,7 +49,7 @@
                         <strong>カテゴリー：</strong>
                         <p class="item-category">
                             @foreach($item->categories as $category)
-                            <span>{{ $category->name }}</span>
+                            <span>{{ $category->category }}</span>
                             @endforeach
                         </p>
                     </div>
@@ -63,11 +63,17 @@
                         <span>コメント</span><p class="count">（{{ $item->comments_count ?? 0 }}）</p>
                     </div>
                     <div class="all-comments">
+                        @forelse ($item->comments as $comment)
                         <div class="comment-id-icon">
-
+                            <span>{{ mb_substr($comment->user->name, 0, 1) }}</span>
                         </div>
                         <div class="comment-content">
-                            
+                            <p class="user-name">{{ $comment->user->name }}</p>
+                            <p class="comment-text">{{ $comment->comment }}</p>
+                            <p class="comment-date">{{ $comment->created_at->diffForHumans() }}</p>
+                            @empty
+                                <p>まだコメントはありません。</p>
+                            @endforelse
                         </div>
                     </div>
                     <div class="comment-text">

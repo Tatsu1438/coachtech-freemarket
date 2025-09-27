@@ -1,0 +1,54 @@
+.verification-box {
+    display: flex;
+    justify-content: center;
+}
+
+.word {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #000000;
+    margin-top: 250px;
+}
+
+.verification-btn-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+}
+
+.verification-btn {
+    box-sizing: border-box;
+    background: #D9D9D9;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    padding: 8px 30px;
+
+    color: #000000;
+}
+
+.verification-resend {
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 40px;
+    margin-bottom: 300px;
+}
+
+.verification-resend-btn {
+    color: #0073CC;
+}

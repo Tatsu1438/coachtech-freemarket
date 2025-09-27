@@ -17,9 +17,9 @@
                 </div>
             </div>
             <div class="search-box">
-                <div class="search-input-box">
-                    <input class="search-input" type="text" placeholder="なにをお探しですか？" >
-                </div>
+                <form class="search-input-box" action="{{ request()->is('mypage_bought') ? route('profile.bought') : route('profile.sold') }}" method="GET">
+                    <input class="search-input" type="text" name="keyword" value="{{ request('keyword') }}" placeholder="商品名で検索" onkeypress="if(event.key === 'Enter'){ this.form.submit(); }" >
+                </form>
             </div>
             <div class="btn-box">
                 <div class="logout-box">

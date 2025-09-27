@@ -11,8 +11,6 @@
     margin-top: 100px;
     margin-bottom: 200px;
 
-
-    border: solid;
 }
 
 h2 {
@@ -87,7 +85,11 @@ button {
 }
 
 .login-btn-box {
-    margin-top: 20px;
+    margin-top: 30px;
     line-height: 24px;
     text-align: center;
+}
+
+.error {
+    margin-top: 10px;
 }

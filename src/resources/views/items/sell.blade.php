@@ -8,14 +8,14 @@
     <div class="sell">
         <div class="sell-box">
             <h2>商品の出品</h2>
-            <form method="POST" action="{{ route('login') }}">
+            <form method="POST" action="{{ route('items.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="item-img">
                     <div class="item-img-name">
                         <label for="img">商品画像</label>
                     </div>
                     <div class="item-img-input">
-                        <input type="file" id="img" name="img" accept="image/*" hidden>
+                        <input type="file" id="img" name="img_url" style="display: none;" >
                         <label for="img" class="file-label">画像を選択する</label>
 
                         <img id="preview-img" src="" alt="プレビュー" style="display:none;">
@@ -24,7 +24,6 @@
                             document.getElementById('img').addEventListener('change', function() {
                                 const file = this.files[0];
 
-                                // プレビュー表示
                                 if (file && file.type.startsWith('image/')) {
                                     const reader = new FileReader();
                                     reader.onload = function(e) {
@@ -40,6 +39,11 @@
                         </script>
                     </div>
                 </div>
+                <div class="image-error">
+                    @error('img_url')
+                        <p  style="color: red;" class="error">{{ $message }}</p>
+                    @enderror
+                </div>
                 <div class="category-condition">
                     <div class="category-condition-title">
                         <h3>商品の詳細</h3>
@@ -48,48 +52,55 @@
                     <div class="category-name">
                         <label for="category">カテゴリー</label>
                     </div>
-                    <div class="category-input">
-                        <input type="radio" id="cat-fashion" name="category" value="fashion">
-                        <label for="cat-fashion" class="radio-label">ファッション</label>
 
-                        <input type="radio" id="cat-appliances" name="category" value="appliances">
+                    <div class="category-input">
+                        <input type="checkbox" id="cat-fashion" name="category[]" value="ファッション">
+                        <label for="cat-fashion"  class="radio-label">ファッション</label>
+
+                        <input type="checkbox" id="cat-appliances" name="category[]" value="家電">
                         <label for="cat-appliances" class="radio-label">家電</label>
 
-                        <input type="radio" id="cat-interior" name="category" value="interior">
+                        <input type="checkbox" id="cat-interior" name="category[]" value="インテリア">
                         <label for="cat-interior" class="radio-label">インテリア</label>
 
-                        <input type="radio" id="cat-female" name="category" value="female">
+                        <input type="checkbox" id="cat-female" name="category[]" value="レデイース">
                         <label for="cat-female" class="radio-label">レディース</label>
 
-                        <input type="radio" id="cat-mens" name="category" value="mens">
+                        <input type="checkbox" id="cat-mens" name="category[]" value="メンズ">
                         <label for="cat-mens" class="radio-label">メンズ</label>
 
-                        <input type="radio" id="cat-cosmetic" name="category" value="cosmetic">
+                        <input type="checkbox" id="cat-cosmetic" name="category[]" value="コスメ">
                         <label for="cat-cosmetic" class="radio-label">コスメ</label>
 
-                        <input type="radio" id="cat-books" name="category" value="books">
+                        <input type="checkbox" id="cat-books" name="category[]" value="本">
                         <label for="cat-books" class="radio-label">本</label>
 
-                        <input type="radio" id="cat-game" name="category" value="game">
+                        <input type="checkbox" id="cat-game" name="category[]" value="ゲーム">
                         <label for="cat-game" class="radio-label">ゲーム</label>
 
-                        <input type="radio" id="cat-sports" name="category" value="sports">
+                        <input type="checkbox" id="cat-sports" name="category[]" value="スポーツ">
                         <label for="cat-sports" class="radio-label">スポーツ</label>
 
-                        <input type="radio" id="cat-kitchen" name="category" value="kitchen">
+                        <input type="checkbox" id="cat-kitchen" name="category[]" value="キッチン">
                         <label for="cat-kitchen" class="radio-label">キッチン</label>
 
-                        <input type="radio" id="cat-handmade" name="category" value="handmade">
+                        <input type="checkbox" id="cat-handmade" name="category[]" value="ハンドメイド">
                         <label for="cat-handmade" class="radio-label">ハンドメイド</label>
 
-                        <input type="radio" id="cat-accessory" name="category" value="accessory">
+                        <input type="checkbox" id="cat-accessory" name="category[]" value="アクセサリー">
                         <label for="cat-accessory" class="radio-label">アクセサリー</label>
 
-                        <input type="radio" id="cat-toys" name="category" value="toys">
+                        <input type="checkbox" id="cat-toys" name="category[]" value="おもちゃ">
                         <label for="cat-toys" class="radio-label">おもちゃ</label>
 
-                        <input type="radio" id="cat-baby-kids" name="category" value="baby-kids">
+                        <input type="checkbox" id="cat-baby-kids" name="category[]" value="ベビー・キッズ">
                         <label for="cat-baby-kids" class="radio-label">ベビー・キッズ</label>
+
+                    </div>
+                    <div class="category-error">
+                        @error('category')
+                            <p  style="color: red;" class="error">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="condition-name">
                         <label for="condition">商品の状態</label>
@@ -103,6 +114,11 @@
                             <option value="fair">やや傷や汚れあり</option>
                             <option value="poor">全体的に状態が悪い</option>
                         </select>
+                        <div class="condition-error">
+                            @error('condition')
+                                <p  style="color: red;" class="error">{{ $message }}</p>
+                            @enderror
+                        </div>
                     </div>
                 </div>
                 <div class="item-detail">
@@ -115,25 +131,46 @@
                         <label for="item-name">商品名</label>
                     </div>
                     <div class="item-detail-input">
-                        <input type="text" id="item-name" name="item-name">
+                        <input type="text" id="item-name" name="product_name">
+                        <div class="product-error">
+                            @error('product_name')
+                                <p  style="color: red;" class="error">{{ $message }}</p>
+                            @enderror
+                        </div>
                     </div>
                     <div class="item-brand-name">
                         <label for="brand">ブランド名</label>
                     </div>
                     <div class="item-brand-input">
                         <input type="text" id="brand" name="brand">
+                        <div>
+                            @error('brand')
+                                <p  style="color: red;" class="error">{{ $message }}</p>
+                            @enderror
+                        </div>
                     </div>
                     <div class="item-text-name">
                         <label for="detail">商品の説明</label>
                     </div>
                     <div class="item-text-input">
-                        <textarea id="detail" name="detail" rows="4" cols="40"></textarea>
+                        <textarea id="detail" name="description" rows="4" cols="40"></textarea>
+                        <div class="description-error">
+                            @error('description')
+                                <p  style="color: red;" class="error">{{ $message }}</p>
+                            @enderror
+                        </div>
                     </div>
                     <div class="item-price-name">
                         <label for="price">販売価格</label>
                     </div>
                     <div class="item-price-input">
                         <input type="number" id="price" name="price" min="0" placeholder="¥">
+                        <div class="price-error">
+                            @error('price')
+                                <p  style="color: red;" class="error">{{ $message }}</p>
+                            @enderror
+                        </div>
+                    </div>
                 </div>
 
 

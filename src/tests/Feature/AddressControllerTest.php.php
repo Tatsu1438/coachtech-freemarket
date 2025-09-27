@@ -3,20 +3,17 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class AddressControllerTest.php extends TestCase
+class AddressControllerTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function test_example()
+    use RefreshDatabase;
+
+    public function test_index_displays_address_view()
     {
-        $response = $this->get('/');
+        $response = $this->get('/address');
 
         $response->assertStatus(200);
+        $response->assertViewIs('address.index');
     }
 }

@@ -1,7 +1,7 @@
 .sell {
     display: flex;
     justify-content: center;
-    width: 1515px;
+    width: 100%;
     border: solid;
 }
 
@@ -11,8 +11,6 @@
     margin-top: 200px;
     margin-bottom: 200px;
 
-
-    border: solid;
 }
 
 .item-img-input{
@@ -232,4 +230,41 @@ textarea {
 .file-label:hover {
     background-color: #FF5655;
     color: #fff;
+}
+
+.image-error {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.category-error {
+    margin-top: 30px;
+}
+
+.condition-error {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.product-error {
+    margin-top: 20px;
+}
+
+.description-error {
+    margin-top: 20px;
+}
+
+.price-error {
+    margin-top: 20px;
+}
+
+.category-input input[type="checkbox"] {
+    display: none;
+}
+
+.category-input input[type="checkbox"]:checked+label {
+    background-color: #ff6f61;
+    /* 好きな色に変更 */
+    color: white;
+    border-color: #ff6f61;
 }

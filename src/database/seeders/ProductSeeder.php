@@ -16,7 +16,7 @@ class ProductSeeder extends Seeder
     {
         DB::table('products')->insert([
             [
-                'name' => '腕時計',
+                'product_name' => '腕時計',
                 'price' => '15000',
                 'brand' => 'Rolex',
                 'description' => 'スタイリッシュなデザインのメンズ腕時計',
@@ -24,7 +24,7 @@ class ProductSeeder extends Seeder
                 'condition' => '良好',
             ],
             [
-                'name' => 'HDD',
+                'product_name' => 'HDD',
                 'price' => '5000',
                 'brand' => '西芝',
                 'description' => '高速で信頼性の高いハードディスク',
@@ -32,7 +32,7 @@ class ProductSeeder extends Seeder
                 'condition' => '目立った傷や汚れなし',
             ],
             [
-                'name' => 'たまねぎ3束',
+                'product_name' => 'たまねぎ3束',
                 'price' => '300',
                 'brand' => 'なし',
                 'description' => '新鮮な玉ねぎ3束のセット',
@@ -40,7 +40,7 @@ class ProductSeeder extends Seeder
                 'condition' => 'やや傷や汚れあり',
             ],
             [
-                'name' => '革靴',
+                'product_name' => '革靴',
                 'price' => '4000',
                 'brand' => '',
                 'description' => 'クラシックなデザインの革靴',
@@ -48,7 +48,7 @@ class ProductSeeder extends Seeder
                 'condition' => '状態が悪い',
             ],
             [
-                'name' => 'ノートPC',
+                'product_name' => 'ノートPC',
                 'price' => '45000',
                 'brand' => '',
                 'description' => '高性能なノートパソコン',
@@ -56,7 +56,7 @@ class ProductSeeder extends Seeder
                 'condition' => '良好',
             ],
             [
-                'name' => 'マイク',
+                'product_name' => 'マイク',
                 'price' => '8000',
                 'brand' => 'なし',
                 'description' => '高音質のレコーディング用マイク',
@@ -64,7 +64,7 @@ class ProductSeeder extends Seeder
                 'condition' => '目立った傷や汚れなし',
             ],
             [
-                'name' => 'ショルダーバッグ',
+                'product_name' => 'ショルダーバッグ',
                 'price' => '3500',
                 'brand' => '',
                 'description' => 'おしゃれなショルダーバッグ',
@@ -72,7 +72,7 @@ class ProductSeeder extends Seeder
                 'condition' => 'やや傷や汚れあり',
             ],
             [
-                'name' => 'タンブラー',
+                'product_name' => 'タンブラー',
                 'price' => '500',
                 'brand' => 'なし',
                 'description' => '使いやすいタンブラー',
@@ -80,7 +80,7 @@ class ProductSeeder extends Seeder
                 'condition' => '状態が悪い',
             ],
             [
-                'name' => 'コーヒーミル',
+                'product_name' => 'コーヒーミル',
                 'price' => '4000',
                 'brand' => 'Starbacks',
                 'description' => '手動のコーヒーミル',
@@ -88,11 +88,11 @@ class ProductSeeder extends Seeder
                 'condition' => '良好',
             ],
             [
-                'name' => 'メイクセット',
+                'product_name' => 'メイクセット',
                 'price' => '2500',
                 'brand' => '',
                 'description' => '便利なメイクアップセット',
-                'img_url' => 'storage/app/public/images/外出メイクアップセット.jpg',
+                'img_url' => 'storage/app/public/images/cosume.jpg',
                 'condition' => '目立った傷や汚れなし',
             ],
         ]);

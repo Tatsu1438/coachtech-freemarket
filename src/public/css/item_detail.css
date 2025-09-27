@@ -4,8 +4,6 @@
     width: auto;
     height: auto;
     margin-top: 100px;
-
-    border: solid;
 }
 
 .item-detail-img {
@@ -14,7 +12,6 @@
     display: flex;
     justify-content: center;
 
-    border: solid;
 }
 
 .item-image {
@@ -27,14 +24,12 @@
     height: auto;
     display: flex;
     justify-content: center;
-
-    border: solid;
+    margin-left: 40px;
 }
 
 .item-detail-group1 {
 
     width: 570px;
-    border: solid;
 }
 
 
@@ -114,7 +109,7 @@
 }
 
 .buy-btn-box {
-    width: 570px;
+    width: 100%;
     height: 56px;
     display: flex;
     justify-content: center;
@@ -123,7 +118,7 @@
 }
 
 .buy-btn {
-    height: 56px;
+    height: 100%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -146,6 +141,8 @@
     line-height: 44px;
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
+    height: auto;
 
     color: #000000;
 }
@@ -192,7 +189,8 @@ strong {
 .item-info-category {
     display: flex;
     align-items: center;
-    border: solid;
+    width: 100%;
+    height: auto;
 
 }
 
@@ -203,7 +201,6 @@ strong {
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-    /* ボックスの高さと同一 */
     display: flex;
     align-items: center;
     text-align: center;
@@ -214,9 +211,10 @@ strong {
 }
 
 .item-info-condition {
+    width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
-    border: solid;
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -244,6 +242,7 @@ strong {
     line-height: 44px;
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 
     color: #5F5F5F;
 }
@@ -279,7 +278,6 @@ textarea {
     background-color: #FF5555;
     margin-top: 50px;
     margin-bottom: 100px;
-    border: solid;
 }
 
 .comment-submit-btn {

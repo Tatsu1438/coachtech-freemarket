@@ -7,8 +7,14 @@
 @section('content')
     <div class="user-name-area">
         <div class="user-name-box">
-            <div class="user-icon"></div>
-            <div class="user-name"></div>
+            <div class="icon">
+                @if(auth()->user()->icon)
+                    <img class="user-icon" src="{{ Storage::url(auth()->user()->icon) }}" alt="{{ auth()->user()->name }}">
+                @endif
+            </div>
+            <div class="user-name">
+                {{ auth()->user()->name }}
+            </div>
             <div class="user-edit">
                 <button class="user-edit-btn" onclick="location.href='{{ route('profile.edit') }}'">プロフィールを編集する</button>
             </div>
@@ -28,48 +34,47 @@
 
     <div class="item-box">
         <div class="item-box-1">
-            @php
-                $items1 = [
-                    'Armani+Mens+Clock.jpg',
-                    'HDD+Hard+Disk.jpg',
-                    'Leather+Shoes+Product+Photo.jpg',
-                    'Living+Room+Laptop.jpg'
-                ];
-            @endphp
-            @foreach ($items1 as $index => $item)
-                <div class="item-card">
-                    <div class="item-card-img">
-                        <img src="{{ asset('storage/images/'.$item) }}" alt="アイテム{{ $index + 1 }}" class="item-image">
+            <div class="card-box">
+                @foreach ($products->slice(0, 4) as $product)
+                    <a href="{{ route('items.detail', $product->id) }}" class="item-card-link">
+                    <div class="item-card">
+                        <div class="item-card-img">
+                            <img src="{{ asset('storage/'.$product->img_url) }}" alt="{{ $product->product_name }}" class="item-image">
+                        </div>
+                        <div class="item-card-name">
+                            <p class="item-name">{{ $product->product_name }}</p>
+                            @if($product->purchases->isNotEmpty())
+                                <span class="sold">SOLD</span>
+                            @endif
+                        </div>
                     </div>
-                    <div class="item-card-name">
-                        <p class="item-name">Item {{ $index + 1 }}</p>
-                    </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
     <div class="item-box-margin"></div>
     <div class="item-box">
         <div class="item-box-2">
-            @php
-                $items2 = [
-                    'Music+Mic+4632231.jpg',
-                    'Purse+fashion+pocket.jpg',
-                    'Tumbler+souvenir.jpg',
-                    'Waitress+with+Coffee+Grinder.jpg'
-                ];
-            @endphp
-            @foreach ($items2 as $index => $item)
-                <div class="item-card">
-                    <div class="item-card-img">
-                        <img src="{{ asset('storage/images/'.$item) }}" alt="アイテム{{ $index + 5 }}" class="item-image">
+            <div class="card-box">
+                @foreach ($products->slice(4, 4) as $product)
+                    <a href="{{ route('items.detail', $product->id) }}" class="item-card-link">
+                    <div class="item-card">
+                        <div class="item-card-img">
+                            <img src="{{ asset('storage/'.$product->img_url) }}" alt="{{ $product->product_name }}" class="item-image">
+                        </div>
+                        <div class="item-card-name">
+                            <p class="item-name">{{ $product->product_name }}
+                            </p>
+                            @if($product->purchases->isNotEmpty())
+                                <span class="sold">SOLD</span>
+                            @endif
+                        </div>
                     </div>
-                    <div class="item-card-name">
-                        <p class="item-name">Item {{ $index + 5 }}</p>
-                    </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
-
+    <div class="pagination">
+        {{ $products->links() }}
+    </div>
 @endsection

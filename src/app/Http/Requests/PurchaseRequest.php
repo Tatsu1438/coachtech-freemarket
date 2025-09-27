@@ -25,13 +25,15 @@ class PurchaseRequest extends FormRequest
     {
         return [
             'payment_method' => 'required',
+            'postal_code' => 'required',
             'address' => 'required',
         ];
     }
-    public function massages()
+    public function messages()
     {
         return [
             'payment_method.required' => 'お支払い方法を選択してください',
+            'postal_code.required' => '郵便番号を選択してください',
             'address.required' => '配送先を選択してください',
         ];
     }
