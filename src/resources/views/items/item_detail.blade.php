@@ -49,7 +49,7 @@
                         <strong>カテゴリー：</strong>
                         <p class="item-category">
                             @foreach($item->categories as $category)
-                            <span>{{ $category->category }}</span>
+                                <span class="category">{{ $category->category }}</span>
                             @endforeach
                         </p>
                     </div>
@@ -64,30 +64,36 @@
                     </div>
                     <div class="all-comments">
                         @forelse ($item->comments as $comment)
-                        <div class="comment-id-icon">
-                            <span>{{ mb_substr($comment->user->name, 0, 1) }}</span>
-                        </div>
                         <div class="comment-content">
-                            <p class="user-name">{{ $comment->user->name }}</p>
-                            <p class="comment-text">{{ $comment->comment }}</p>
-                            <p class="comment-date">{{ $comment->created_at->diffForHumans() }}</p>
-                            @empty
-                                <p>まだコメントはありません。</p>
-                            @endforelse
+                            <div class="user-name-icon">
+                                <img src="{{ $comment->user->icon
+                                ? asset('storage/' . $comment->user->icon)
+                                : asset('images/default_icon.png') }}"
+                                class="comment-id-icon">
+                                <p class="user-name">{{ $comment->user->name }}</p>
+                                <p class="comment-date">{{ $comment->created_at->diffForHumans() }}</p>
+                            </div>
+                            <div class="comment-text-box">
+                                <p class="comment-text">{{ $comment->comment }}</p>
+                            </div>
                         </div>
+                        @empty
+                            <p>まだコメントはありません。</p>
+                        @endforelse
                     </div>
                     <div class="comment-text">
                         <h3 class="comment-text-title">商品へのコメント</h3>
                         <form action="{{ route('comments.store', $item->id) }}" method="POST">
                             @csrf
                             <textarea name="comment" id="comment"></textarea>
+                            @error('comment')
+                                <p  style="color: red;" class="error">{{ $message }}</p>
+                            @enderror
                             <div class="comment-submit">
                                 <button type="submit" class="comment-submit-btn">コメントを送信する</button>
                             </div>
                         </form>
                     </div>
-                    
-
                 </div>
             </div>
 

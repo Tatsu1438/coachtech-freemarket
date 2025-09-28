@@ -38,7 +38,23 @@
                 @foreach ($purchases->slice(0, 4) as $index => $purchase)
                     <div class="item-card">
                         <div class="item-card-img">
-                            <img src="{{ asset($purchase->product && $purchase->product->img_url ? str_replace('storage/app/public/', 'storage/', $purchase->product->img_url) : 'images/default.jpg') }}" alt="アイテム{{ $index + 1 }}" class="item-image">
+                            @php
+                                $img = $purchase->product ? $purchase->product->img_url : null;
+                            @endphp
+
+                            @if ($img)
+                                @if (Str::startsWith($img, 'products/'))
+                                    <img src="{{ asset('storage/' . $img) }}" alt="アイテム{{ $index + 1 }}" class="item-image">
+                                @elseif (Str::startsWith($img, 'images/'))
+                                    <img src="{{ asset('storage/' . str_replace('images/', 'images/', $img)) }}" alt="アイテム{{ $index + 1 }}" class="item-image">
+                                @elseif (Str::startsWith($img, 'storage/app/public/images/'))
+                                    <img src="{{ asset(str_replace('storage/app/public/', 'storage/', $img)) }}" alt="アイテム{{ $index + 1 }}" class="item-image">
+                                @else
+                                    <img src="{{ asset('images/default.jpg') }}" alt="アイテム{{ $index + 1 }}" class="item-image">
+                                @endif
+                            @else
+                                <img src="{{ asset('images/default.jpg') }}" alt="アイテム{{ $index + 1 }}" class="item-image">
+                            @endif
                         </div>
                         <div class="item-card-name">
                             <p class="item-name">{{ $purchase->product ? $purchase->product->product_name : '商品名なし' }}</p>
@@ -55,9 +71,23 @@
                 @foreach ($purchases->slice(4, 4) as $index => $purchase)
                     <div class="item-card">
                         <div class="item-card-img">
-                            <img src="{{ asset($purchase->product && $purchase->product->img_url ? str_replace('storage/app/public/', 'storage/', $purchase->product->img_url) : 'images/default.jpg') }}" 
-                                alt="アイテム{{ $index + 5 }}" 
-                                class="item-image">
+                            @php
+                                $img = $purchase->product ? $purchase->product->img_url : null;
+                            @endphp
+
+                            @if ($img)
+                                @if (Str::startsWith($img, 'products/'))
+                                    <img src="{{ asset('storage/' . $img) }}" alt="アイテム{{ $index + 1 }}" class="item-image">
+                                @elseif (Str::startsWith($img, 'images/'))
+                                    <img src="{{ asset('storage/' . str_replace('images/', 'images/', $img)) }}" alt="アイテム{{ $index + 1 }}" class="item-image">
+                                @elseif (Str::startsWith($img, 'storage/app/public/images/'))
+                                    <img src="{{ asset(str_replace('storage/app/public/', 'storage/', $img)) }}" alt="アイテム{{ $index + 1 }}" class="item-image">
+                                @else
+                                    <img src="{{ asset('images/default.jpg') }}" alt="アイテム{{ $index + 1 }}" class="item-image">
+                                @endif
+                            @else
+                                <img src="{{ asset('images/default.jpg') }}" alt="アイテム{{ $index + 1 }}" class="item-image">
+                            @endif
                         </div>
                         <div class="item-card-name">
                             <p class="item-name">{{ $purchase->product ? $purchase->product->product_name : '商品名なし' }}</p>

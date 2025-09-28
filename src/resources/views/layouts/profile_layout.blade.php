@@ -18,7 +18,7 @@
             </div>
             <div class="search-box">
                 <form class="search-input-box" action="{{ request()->is('mypage_bought') ? route('profile.bought') : route('profile.sold') }}" method="GET">
-                    <input class="search-input" type="text" name="keyword" value="{{ request('keyword') }}" placeholder="商品名で検索" onkeypress="if(event.key === 'Enter'){ this.form.submit(); }" >
+                    <input class="search-input" type="text" name="keyword" value="{{ request('keyword') }}" placeholder="なにをお探しですか？" onkeypress="if(event.key === 'Enter'){ this.form.submit(); }" >
                 </form>
             </div>
             <div class="btn-box">

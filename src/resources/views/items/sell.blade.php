@@ -108,11 +108,11 @@
                     <div class="condition-input">
                         <select name="condition" id="condition">
                             <option value="">選択してください</option>
-                            <option value="new">新品・未使用</option>
-                            <option value="like_new">未使用に近い</option>
-                            <option value="good">目立った傷や汚れなし</option>
-                            <option value="fair">やや傷や汚れあり</option>
-                            <option value="poor">全体的に状態が悪い</option>
+                            <option value="新品・未使用">新品・未使用</option>
+                            <option value="未使用に近い">未使用に近い</option>
+                            <option value="目立った傷や汚れなし">目立った傷や汚れなし</option>
+                            <option value="やや傷や汚れあり">やや傷や汚れあり</option>
+                            <option value="全体的に状態が悪い">全体的に状態が悪い</option>
                         </select>
                         <div class="condition-error">
                             @error('condition')

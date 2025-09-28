@@ -57,19 +57,19 @@
         <div class="item-box-2">
             <div class="card-box">
                 @foreach ($products->slice(4, 4) as $product)
-                    <a href="{{ route('items.detail', $product->id) }}" class="item-card-link">
+                <a  href="{{ route('items.detail', $product->id) }}" class="item-card-link">
                     <div class="item-card">
                         <div class="item-card-img">
                             <img src="{{ asset('storage/'.$product->img_url) }}" alt="{{ $product->product_name }}" class="item-image">
                         </div>
                         <div class="item-card-name">
-                            <p class="item-name">{{ $product->product_name }}
-                            </p>
+                            <p class="item-name">{{ $product->product_name }}</p>
                             @if($product->purchases->isNotEmpty())
                                 <span class="sold">SOLD</span>
                             @endif
                         </div>
                     </div>
+                </a>
                 @endforeach
             </div>
         </div>
