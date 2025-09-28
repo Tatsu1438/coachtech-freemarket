@@ -45,7 +45,14 @@ coachtechフリマ
 
     docker-compose exec php bash
     composer install
+
+## 環境変数
+
+.env ファイルを作成して以下のように設定してください
+
     環境変数を以下に変更
+	cp .env.example .env
+	
 	DB_CONNECTION=mysql
 	DB_HOST=mysql
 	DB_PORT=3306
@@ -53,27 +60,18 @@ coachtechフリマ
 	DB_USERNAME=laravel_user
 	DB_PASSWORD=laravel_pass
 
-	php artisan config:clear
- 	php artisn cache:clear
-
 ## アプリケーションキーの作成
 
-## 環境変数
-
-.env ファイルを作成して以下のように設定してください
-
-	cp .env.example .env
 	php artisan key:generate
-  
-    php artisan key:generate
-	php artisqan config:cache
 
-## Productモデルとマイグレーション(test用と本番用)の作成&実行
- 
-    php artisan make:model Product -m
+	php artisan config:clear
+	php artisan cache:clear
+	php artisan config:cache
 
+## マイグレーション(test用と本番用)の作成&実行
+
+	php artisan migrate
  	php artisan migrate --env=testing
-	php artisan make:migration
 
 ## テスト方法
 
@@ -93,7 +91,7 @@ coachtechフリマ
 
 ## 使用技術（実行環境）
 
-PHP:7.4.9
+PHP:7.4
 
 mysql:8.0
 
