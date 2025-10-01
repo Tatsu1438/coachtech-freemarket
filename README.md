@@ -82,7 +82,6 @@ coachtechフリマ
 
 ## シーディングの作成&実行
 
- 	php artisan make:seeder ProductSeeder
     php artisan db:seed
 
 ## シンボリックリンクの作成
