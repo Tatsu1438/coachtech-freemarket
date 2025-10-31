@@ -56,7 +56,28 @@ coachtechフリマ
 	DB_CONNECTION=mysql
 	DB_HOST=mysql
 	DB_PORT=3306
-	DB_DATABASE=laravel_db
+	DB_DATABASE=freemarket_db
+	DB_USERNAME=laravel_user
+	DB_PASSWORD=laravel_pass
+	
+	MAIL_MAILER=smtp
+	MAIL_HOST=mailhog
+	MAIL_PORT=1025
+	MAIL_USERNAME=null
+	MAIL_PASSWORD=null
+	MAIL_ENCRYPTION=null
+	MAIL_FROM_ADDRESS=admin@example.com
+	MAIL_FROM_NAME="${APP_NAME}"
+
+	ADMIN_EMAIL=admin@example.com
+	ADMIN_PASSWORD=admin12345
+
+.env.testingが以下であることを確認
+
+	DB_CONNECTION=mysql
+	DB_HOST=freemarket_test_db
+	DB_PORT=3306
+	DB_DATABASE=laravel_test_db
 	DB_USERNAME=laravel_user
 	DB_PASSWORD=laravel_pass
 
