@@ -123,11 +123,13 @@ Laravel:8.x
 
 URL:
 
-・画面: http://localhost/
+・画面: http://localhost:8087
 
 ・ユーザー登録: http://localhost/
 
-・phpMyAdmin: http://localhost:8080/
+・phpMyAdmin: http://localhost:8083
+
+・mailhog: http://localhost:8026
    
 
 ## ER図
