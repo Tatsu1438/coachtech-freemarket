@@ -77,7 +77,7 @@ coachtechフリマ
 	DB_CONNECTION=mysql
 	DB_HOST=mysql
 	DB_PORT=3306
-	DB_DATABASE=laravel_test_db
+	DB_DATABASE=laravel_db
 	DB_USERNAME=laravel_user
 	DB_PASSWORD=laravel_pass
 
@@ -88,6 +88,13 @@ coachtechフリマ
 	php artisan config:clear
 	php artisan cache:clear
 	php artisan config:cache
+
+.env.testingファイル３行目のAPP_KEYがない場合は以下コマンドを実行
+
+	cp .env .env.testing
+	php artisan config:clear
+	php artisan cache:clear
+	
 
 ## マイグレーション(test用と本番用)の作成&実行
 
