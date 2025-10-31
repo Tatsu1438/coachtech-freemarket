@@ -55,7 +55,7 @@ coachtechフリマ
 	
 	DB_CONNECTION=mysql
 	DB_HOST=mysql
-	DB_PORT=3308
+	DB_PORT=3306
 	DB_DATABASE=freemarket_db
 	DB_USERNAME=laravel_user
 	DB_PASSWORD=laravel_pass
@@ -76,7 +76,7 @@ coachtechフリマ
 
 	DB_CONNECTION=mysql
 	DB_HOST=freemarket_test_db
-	DB_PORT=3308
+	DB_PORT=3306
 	DB_DATABASE=laravel_test_db
 	DB_USERNAME=laravel_user
 	DB_PASSWORD=laravel_pass
