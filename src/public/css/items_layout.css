@@ -125,3 +125,7 @@ input::placeholder {
     color: #000000;
     cursor: pointer;
 }
+
+a {
+    text-decoration: none;
+}

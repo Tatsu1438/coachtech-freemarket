@@ -258,3 +258,7 @@
 .item-card-link {
     display: contents;
 }
+
+a {
+    text-decoration: none;
+}

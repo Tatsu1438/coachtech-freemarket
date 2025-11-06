@@ -55,6 +55,7 @@ button {
     margin-top: 90px;
     background: #FF5555;
     border-radius: 5px;
+    border: none;
 }
 
 #btn {
@@ -84,4 +85,9 @@ button {
 .error {
     margin-top: 10px;
     color: red;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }

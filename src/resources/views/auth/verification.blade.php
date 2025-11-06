@@ -13,7 +13,7 @@
             </div>
 
             <div class="verification-btn-box">
-                <a class="verification-btn" href="{{ url('/email/verify') }}">
+                <a class="verification-btn" href="http://localhost:8026">
                     認証はこちらから
                 </a>
             </div>

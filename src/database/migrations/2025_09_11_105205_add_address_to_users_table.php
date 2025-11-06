@@ -27,7 +27,12 @@ class AddAddressToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['postal_code', 'address', 'building']);
+            if (Schema::hasColumn('users', 'postal_code')) {
+                $table->dropColumn('postal_code');
+            }
+            if (Schema::hasColumn('users', 'address')) {
+                $table->dropColumn('address');
+            }
         });
     }
 }

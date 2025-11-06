@@ -12,7 +12,7 @@
         <form action="{{ route('profile.first') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="logo-box">
-                <div class="icon">
+                <div class="icon" id="icon-preview">
 
                 </div>
                 <label for="icon" class="file-label">画像を選択する</label>
@@ -21,6 +21,26 @@
             @error('icon')
                 <p  style="color: red;" class="error">{{ $message }}</p>
             @enderror
+
+            <script>
+                const input = document.getElementById('icon');
+                const preview = document.getElementById('icon-preview');
+
+                input.addEventListener('change', function (e) {
+                    const file = e.target.files[0];
+                    if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (event) {
+                        preview.style.backgroundImage = `url(${event.target.result})`;
+                        preview.style.backgroundColor = 'transparent';
+                    };
+                    reader.readAsDataURL(file);
+                    } else {
+                    preview.style.backgroundImage = '';
+                    preview.style.backgroundColor = '#ccc';
+                    }
+                });
+            </script>
             <div class="user-box">
                 <div class="user-box-name">
                     <label for="name">ユーザー名</label>
